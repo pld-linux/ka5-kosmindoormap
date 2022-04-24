@@ -22,7 +22,8 @@ BuildRequires:	Qt5Widgets-devel
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gettext-devel
-BuildRequires:	ka5-kpublictransport-devel
+BuildRequires:	ka5-kopeninghours-devel >= %{kdeappsver}
+BuildRequires:	ka5-kpublictransport-devel >= %{kdeappsver}
 BuildRequires:	kf5-extra-cmake-modules >= 5.89
 BuildRequires:	kf5-ki18n-devel
 BuildRequires:	ninja
