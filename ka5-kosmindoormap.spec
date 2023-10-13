@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.08.1
+%define		kdeappsver	23.08.2
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kosmindoormap
 Summary:	A library for rendering multi-level OSM indoor maps
 Name:		ka5-%{kaname}
-Version:	23.08.1
+Version:	23.08.2
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	49f48bd805ab3112412c6694b90040a6
+# Source0-md5:	96fe79852e2256e1ff17416effb76ed7
 URL:		https://community.kde.org/
 BuildRequires:	Qt5Gui-devel
 BuildRequires:	Qt5Network-devel >= 5.15.2
