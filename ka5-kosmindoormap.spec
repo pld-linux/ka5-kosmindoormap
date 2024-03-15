@@ -1,34 +1,34 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		kosmindoormap
 Summary:	A library for rendering multi-level OSM indoor maps
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	8c20d7da5346a1591bd6e720d0619082
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	390867cafbec403d0966ab54a199d269
 URL:		https://community.kde.org/
-BuildRequires:	Qt6Gui-devel
-BuildRequires:	Qt6Network-devel >= 5.15.2
-BuildRequires:	Qt6Qml-devel >= 5.15.2
-BuildRequires:	Qt6Quick-devel
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Gui-devel
+BuildRequires:	Qt5Network-devel >= 5.15.2
+BuildRequires:	Qt5Qml-devel >= 5.15.2
+BuildRequires:	Qt5Quick-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	bison
 BuildRequires:	flex
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-kopeninghours-devel >= %{kdeappsver}
 BuildRequires:	ka5-kpublictransport-devel >= %{kdeappsver}
-BuildRequires:	kf6-extra-cmake-modules >= 5.89
-BuildRequires:	kf6-ki18n-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.89
+BuildRequires:	kf5-ki18n-devel
 BuildRequires:	ninja
 BuildRequires:	protobuf-devel
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.605
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -108,29 +108,19 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md
 %ghost %{_libdir}/libKOSM.so.1
-%attr(755,root,root) %{_libdir}/libKOSM.so.*.*
+%attr(755,root,root) %{_libdir}/libKOSM.so.*.*.*
 %ghost %{_libdir}/libKOSMIndoorMap.so.1
-%attr(755,root,root) %{_libdir}/libKOSMIndoorMap.so.*.*
-%dir %{_libdir}/qt6/qml/org/kde/kosmindoormap
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/IndoorMap.qml
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/IndoorMapAttributionLabel.qml
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/IndoorMapScale.qml
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/kosmindoormapquickplugin.qmltypes
-%dir %{_libdir}/qt6/qml/org/kde/kosmindoormap/kpublictransport
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/kpublictransport/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/kpublictransport/kosmindoormap_kpublictransport_integration_plugin.qmltypes
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kosmindoormap/kpublictransport/libkosmindoormap_kpublictransport_integration_plugin.so
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/kpublictransport/qmldir
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/kosmindoormap/libkosmindoormapquickplugin.so
-%{_libdir}/qt6/qml/org/kde/kosmindoormap/qmldir
-%dir %{_libdir}/qt6/qml/org/kde/osm
-%dir %{_libdir}/qt6/qml/org/kde/osm/editorcontroller
-%{_libdir}/qt6/qml/org/kde/osm/editorcontroller/kde-qmlmodule.version
-%{_libdir}/qt6/qml/org/kde/osm/editorcontroller/kosmeditorcontrollerplugin.qmltypes
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/osm/editorcontroller/libkosmeditorcontrollerplugin.so
-%{_libdir}/qt6/qml/org/kde/osm/editorcontroller/qmldir
-%{_datadir}/qlogging-categories6/org_kde_kosmindoormap.categories
+%attr(755,root,root)%{_libdir}/libKOSMIndoorMap.so.*.*.*
+%{_libdir}/qt5/qml/org/kde/kosmindoormap/IndoorMap.qml
+%{_libdir}/qt5/qml/org/kde/kosmindoormap/IndoorMapAttributionLabel.qml
+%{_libdir}/qt5/qml/org/kde/kosmindoormap/IndoorMapScale.qml
+%dir %{_libdir}/qt5/qml/org/kde/kosmindoormap
+%dir %{_libdir}/qt5/qml/org/kde/kosmindoormap/kpublictransport
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/kosmindoormap/kpublictransport/libkosmindoormap_kpublictransport_integration_plugin.so
+%{_libdir}/qt5/qml/org/kde/kosmindoormap/kpublictransport/qmldir
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/kosmindoormap/libkosmindoormapquickplugin.so
+%{_libdir}/qt5/qml/org/kde/kosmindoormap/qmldir
+%{_datadir}/qlogging-categories5/org_kde_kosmindoormap.categories
 
 %files devel
 %defattr(644,root,root,755)
